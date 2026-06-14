@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate Mitigation & Sustainability | Scholarnest</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #0f3460;
+    --ocean: #16213e;
+    --azure: #1a7abf;
+    --teal: #00b4d8;
+    --ice: #caf0f8;
+    --sand: #f8f4ef;
+    --ember: #e76f51;
+    --gold: #f4a261;
+    --green: #2d6a4f;
+    --leaf: #52b788;
+    --mint: #b7e4c7;
+    --ink: #1c1c1c;
+    --mist: #e8f4f8;
+    --white: #ffffff;
+    --slate: #4a5568;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--sand);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--ocean);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 62px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--teal); font-weight: 700; }
+
+  .nav-links { display: flex; gap: 1.2rem; list-style: none; }
+  .nav-links a { color: var(--ice); text-decoration: none; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.5px; opacity: 0.75; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--ocean) 0%, #0a1628 50%, var(--sky) 100%);
+    color: white; padding: 5rem 2rem 4.5rem; text-align: center; position: relative; overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(0,180,216,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 70%, rgba(231,111,81,0.08) 0%, transparent 50%);
+  }
+
+  .hero-content { position: relative; }
+
+  .chapter-badge {
+    display: inline-block; background: var(--teal); color: var(--ocean);
+    font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700;
+    padding: 0.3rem 1rem; border-radius: 2px; margin-bottom: 1.5rem; letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 900; line-height: 1.05;
+    margin-bottom: 1.5rem; color: var(--white);
+  }
+
+  .hero h1 span { color: var(--teal); }
+
+  .hero-sub { font-size: 1rem; color: var(--ice); max-width: 640px; margin: 0 auto 2.5rem; opacity: 0.9; }
+
+  .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; max-width: 750px; margin: 0 auto; }
+  .chip { background: rgba(0,180,216,0.12); border: 1px solid rgba(0,180,216,0.3); color: var(--ice); font-size: 0.77rem; padding: 0.3rem 0.9rem; border-radius: 20px; font-weight: 500; }
+
+  /* LAYOUT */
+  .container { max-width: 1020px; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 4rem 1.5rem; max-width: 1020px; margin: 0 auto; }
+
+  .section-label { font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; }
+
+  h2 { font-family: 'Playfair Display', serif; font-size: 2.1rem; color: var(--sky); margin-bottom: 1.4rem; line-height: 1.2; }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--azure); margin: 2rem 0 0.8rem; }
+  h4 { font-size: 0.98rem; font-weight: 600; color: var(--sky); margin: 1.3rem 0 0.4rem; }
+  p { margin-bottom: 1rem; color: #383838; }
+
+  /* CARD GRID */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.4rem; margin: 1.8rem 0; }
+
+  .card {
+    background: white; border-radius: 12px; padding: 1.6rem;
+    border: 1px solid #d9e8f0; box-shadow: 0 2px 12px rgba(15,52,96,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,52,96,0.12); }
+  .card-icon { font-size: 1.9rem; margin-bottom: 0.7rem; }
+  .card h4 { color: var(--sky); margin-bottom: 0.4rem; font-size: 1rem; }
+  .card p { font-size: 0.9rem; margin: 0; }
+
+  /* HIGHLIGHT */
+  .highlight { background: linear-gradient(135deg, var(--mist), #daf2ff); border-left: 4px solid var(--teal); padding: 1.4rem 1.7rem; border-radius: 0 8px 8px 0; margin: 1.4rem 0; }
+  .highlight p { margin: 0; font-size: 0.94rem; }
+
+  .highlight-warn { background: linear-gradient(135deg, #fff5ec, #ffe8d6); border-left: 4px solid var(--ember); padding: 1.4rem 1.7rem; border-radius: 0 8px 8px 0; margin: 1.4rem 0; }
+  .highlight-warn p { margin: 0; font-size: 0.94rem; }
+
+  .highlight-green { background: linear-gradient(135deg, #edf7f0, #d4edda); border-left: 4px solid var(--leaf); padding: 1.4rem 1.7rem; border-radius: 0 8px 8px 0; margin: 1.4rem 0; }
+  .highlight-green p { margin: 0; font-size: 0.94rem; }
+
+  /* DEFINITION BOX */
+  .definition { background: var(--sky); color: white; padding: 2rem; border-radius: 12px; margin: 1.8rem 0; }
+  .definition .def-term { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--teal); margin-bottom: 0.7rem; }
+  .definition p { color: var(--ice); font-size: 0.94rem; margin: 0; }
+
+  /* KEY FACT */
+  .key-fact { background: var(--gold); color: var(--ocean); padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.93rem; margin: 1rem 0; }
+
+  /* STYLED LIST */
+  .styled-list { list-style: none; margin: 1rem 0; }
+  .styled-list li { padding: 0.5rem 0 0.5rem 1.8rem; position: relative; font-size: 0.92rem; color: #3a3a3a; border-bottom: 1px solid #eaeef2; }
+  .styled-list li::before { content: '▸'; color: var(--teal); position: absolute; left: 0; font-size: 0.9rem; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; font-size: 0.88rem; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  th { background: var(--sky); color: var(--ice); padding: 0.85rem 1.2rem; text-align: left; font-weight: 600; font-size: 0.83rem; }
+  td { padding: 0.75rem 1.2rem; border-bottom: 1px solid #dce8f0; }
+  tr:nth-child(even) td { background: var(--mist); }
+  tr:last-child td { border-bottom: none; }
+
+  /* SECTION BG VARIANTS */
+  .bg-ocean { background: var(--ocean); color: white; padding: 4rem 1.5rem; }
+  .bg-ocean h2 { color: var(--teal); }
+  .bg-ocean h3 { color: #90caf9; }
+  .bg-ocean p { color: rgba(255,255,255,0.85); }
+  .bg-ocean .section-label { color: var(--gold); }
+
+  .bg-mist { background: var(--mist); padding: 4rem 1.5rem; }
+  .bg-green { background: #f0f9f4; padding: 4rem 1.5rem; }
+  .bg-amber { background: #fff8ee; padding: 4rem 1.5rem; }
+
+  .section-divider { border: none; border-top: 2px dashed #c8dde8; margin: 0; }
+
+  /* TOC */
+  .toc { background: white; border: 1px solid #c8dde8; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .toc-title { font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--azure); margin-bottom: 1rem; }
+  .toc ol { padding-left: 1.2rem; }
+  .toc li { margin: 0.45rem 0; }
+  .toc a { color: var(--azure); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .toc a:hover { color: var(--sky); text-decoration: underline; }
+  .toc-sub { padding-left: 1.5rem; margin-top: 0.3rem; }
+  .toc-sub li { font-size: 0.85rem; }
+
+  /* DIAGRAM BOXES */
+  .diagram-box { background: white; border: 2px solid var(--ice); border-radius: 16px; padding: 2rem; margin: 2rem 0; text-align: center; }
+  .diagram-title { font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 2px; color: var(--azure); margin-bottom: 1.5rem; text-transform: uppercase; }
+
+  /* GHG MITIGATION DIAGRAM */
+  .two-path { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+  .path-box { border-radius: 12px; padding: 1.5rem; }
+  .path-red { background: linear-gradient(135deg, #fff0eb, #ffe0d0); border: 2px solid #e76f51; }
+  .path-blue { background: linear-gradient(135deg, #e8f4ff, #d0e8ff); border: 2px solid var(--azure); }
+  .path-box h4 { font-size: 1rem; margin-bottom: 0.6rem; }
+  .path-red h4 { color: #c45d3a; }
+  .path-blue h4 { color: var(--sky); }
+  .path-box ul { list-style: none; }
+  .path-box ul li { font-size: 0.85rem; padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .path-box ul li::before { content: '• '; }
+
+  /* FORMULA BOX */
+  .formula { background: var(--sky); color: var(--ice); padding: 1.2rem 1.8rem; border-radius: 10px; font-family: 'Space Mono', monospace; font-size: 1rem; text-align: center; margin: 1.2rem 0; }
+  .formula span { color: var(--teal); font-weight: 700; }
+
+  /* CCS STEPS */
+  .ccs-steps { display: flex; gap: 0; margin: 1.5rem 0; flex-wrap: wrap; }
+  .ccs-step { flex: 1; min-width: 160px; padding: 1.2rem; text-align: center; }
+  .ccs-step:nth-child(1) { background: #e3f2fd; border-radius: 10px 0 0 10px; }
+  .ccs-step:nth-child(2) { background: #bbdefb; }
+  .ccs-step:nth-child(3) { background: #90caf9; border-radius: 0 10px 10px 0; }
+  .ccs-step .step-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .ccs-step h4 { color: var(--sky); font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .ccs-step p { font-size: 0.8rem; color: #334; margin: 0; }
+  .ccs-arrow { display: flex; align-items: center; font-size: 1.5rem; color: var(--azure); padding: 0 0.2rem; }
+
+  /* PDCA WHEEL */
+  .pdca { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; max-width: 480px; }
+  .pdca-cell { padding: 1.5rem; text-align: center; color: white; }
+  .pdca-p { background: var(--sky); }
+  .pdca-d { background: var(--azure); }
+  .pdca-c { background: var(--teal); color: var(--ocean); }
+  .pdca-a { background: #0096c7; }
+  .pdca-cell .p-letter { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; line-height: 1; }
+  .pdca-cell h4 { font-size: 0.85rem; margin-bottom: 0.4rem; }
+  .pdca-cell p { font-size: 0.75rem; opacity: 0.9; margin: 0; }
+
+  /* NAPCC MISSIONS */
+  .missions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .mission-card { border-radius: 10px; padding: 1.2rem; color: white; }
+  .mission-card h4 { font-size: 0.85rem; color: white; margin-bottom: 0.3rem; }
+  .mission-card p { font-size: 0.78rem; color: rgba(255,255,255,0.85); margin: 0; }
+  .m1 { background: linear-gradient(135deg, #f4a261, #e76f51); }
+  .m2 { background: linear-gradient(135deg, #2a9d8f, #264653); }
+  .m3 { background: linear-gradient(135deg, #1a7abf, #0f3460); }
+  .m4 { background: linear-gradient(135deg, #52b788, #2d6a4f); }
+  .m5 { background: linear-gradient(135deg, #8338ec, #3a0ca3); }
+  .m6 { background: linear-gradient(135deg, #e9c46a, #c77a1a); }
+  .m7 { background: linear-gradient(135deg, #00b4d8, #0077b6); }
+  .m8 { background: linear-gradient(135deg, #e63946, #9b2226); }
+  .m9 { background: linear-gradient(135deg, #457b9d, #1d3557); }
+
+  /* GREEN CHEMISTRY PRINCIPLES */
+  .gc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .gc-card { background: white; border-radius: 10px; padding: 1.2rem; border-top: 4px solid var(--leaf); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .gc-num { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--leaf); font-weight: 700; margin-bottom: 0.3rem; letter-spacing: 1px; }
+  .gc-card h4 { font-size: 0.9rem; color: var(--green); margin-bottom: 0.3rem; }
+  .gc-card p { font-size: 0.8rem; margin: 0; color: #555; }
+
+  /* GREEN ENGINEERING PRINCIPLES */
+  .ge-list { list-style: none; margin: 1rem 0; counter-reset: ge; }
+  .ge-list li { counter-increment: ge; padding: 0.7rem 0 0.7rem 3rem; position: relative; border-bottom: 1px solid #e0f0e8; font-size: 0.9rem; }
+  .ge-list li::before { content: counter(ge, decimal-leading-zero); background: var(--green); color: white; font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.4rem; border-radius: 4px; position: absolute; left: 0; top: 0.75rem; }
+
+  /* ISO CLAUSES */
+  .iso-clauses { display: flex; flex-direction: column; gap: 3px; margin: 1.5rem 0; }
+  .iso-clause { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.2rem; background: white; border-left: 3px solid var(--azure); }
+  .iso-clause:hover { background: var(--mist); }
+  .clause-num { background: var(--sky); color: var(--ice); font-family: 'Space Mono', monospace; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px; flex-shrink: 0; font-weight: 700; }
+  .iso-clause h4 { margin: 0 0 0.2rem; color: var(--sky); font-size: 0.95rem; }
+  .iso-clause p { font-size: 0.85rem; margin: 0; }
+
+  /* COMPARISON TABLE COLORED */
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+  .vs-col { border-radius: 12px; overflow: hidden; }
+  .vs-head { padding: 0.9rem 1.2rem; font-weight: 700; font-size: 0.95rem; }
+  .vs-green .vs-head { background: var(--green); color: white; }
+  .vs-blue .vs-head { background: var(--sky); color: white; }
+  .vs-body { padding: 1rem 1.2rem; }
+  .vs-green .vs-body { background: #f0f9f4; }
+  .vs-blue .vs-body { background: #e8f4ff; }
+  .vs-body ul { list-style: none; }
+  .vs-body ul li { font-size: 0.85rem; padding: 0.35rem 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .vs-body ul li::before { content: '✓ '; font-weight: 700; }
+  .vs-green .vs-body ul li::before { color: var(--green); }
+  .vs-blue .vs-body ul li::before { color: var(--azure); }
+
+  /* CLIMATE JUSTICE */
+  .justice-box { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 2rem; border-radius: 16px; margin: 1.5rem 0; }
+  .justice-box h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 1rem; }
+  .justice-box p { color: rgba(255,255,255,0.85); font-size: 0.92rem; }
+  .justice-box ul { list-style: none; }
+  .justice-box ul li { font-size: 0.9rem; color: rgba(255,255,255,0.85); padding: 0.4rem 0 0.4rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); position: relative; }
+  .justice-box ul li::before { content: '⚖️'; position: absolute; left: 0; }
+
+  /* SUSTAINABILITY TRIANGLE */
+  .sust-triangle { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+  .sust-box { border-radius: 12px; padding: 1.5rem; text-align: center; }
+  .sust-eco { background: linear-gradient(135deg, #2d6a4f, #52b788); color: white; }
+  .sust-soc { background: linear-gradient(135deg, #0f3460, #1a7abf); color: white; }
+  .sust-env { background: linear-gradient(135deg, #e76f51, #f4a261); color: white; }
+  .sust-box .s-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .sust-box h4 { color: white; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .sust-box p { color: rgba(255,255,255,0.85); font-size: 0.8rem; margin: 0; }
+
+  /* SCORE BADGES */
+  .badge { display: inline-block; background: var(--teal); color: var(--ocean); font-family: 'Space Mono', monospace; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 3px; margin-right: 0.4rem; }
+  .badge-red { background: var(--ember); color: white; }
+  .badge-green { background: var(--leaf); color: var(--green); }
+  .badge-gold { background: var(--gold); color: var(--ocean); }
+
+  /* SCROLL FADE */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* FOOTER */
+  footer { background: #070d14; color: var(--teal); text-align: center; padding: 2rem; font-size: 0.85rem; }
+  footer .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--teal); margin-bottom: 0.5rem; }
+  footer p { color: rgba(202,240,248,0.5); margin: 0; }
+
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .two-path { grid-template-columns: 1fr; }
+    .sust-triangle { grid-template-columns: 1fr; }
+    .vs-grid { grid-template-columns: 1fr; }
+    .pdca { max-width: 100%; }
+    .ccs-steps { flex-direction: column; }
+    .ccs-step { border-radius: 10px !important; }
+    .ccs-arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="18" fill="#1a7abf"/>
+      <path d="M18 6 C10 6 6 13 8 20 C10 27 18 30 18 30 C18 30 26 27 28 20 C30 13 26 6 18 6Z" fill="#00b4d8"/>
+      <path d="M18 30 L18 14" stroke="#0f3460" stroke-width="2" stroke-linecap="round"/>
+      <path d="M18 20 L13 15" stroke="#0f3460" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M18 18 L23 13" stroke="#0f3460" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <span class="logo-text">Scholarnest</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#ghg">GHG Mitigation</a></li>
+    <li><a href="#intensity">Carbon Intensity</a></li>
+    <li><a href="#ccs">CCS</a></li>
+    <li><a href="#napcc">NAPCC & INDCs</a></li>
+    <li><a href="#iso">ISO 14001</a></li>
+    <li><a href="#sustainable">Sustainability</a></li>
+    <li><a href="#green-chem">Green Chemistry</a></li>
+    <li><a href="#green-eng">Green Engineering</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="chapter-badge">ENVIRONMENTAL STUDIES</div>
+    <h1>Climate <span>Mitigation</span> &<br>Sustainability</h1>
+    <p class="hero-sub">Comprehensive notes on GHG reduction, carbon capture, national climate policy, ISO 14001, green chemistry and green engineering .</p>
+    <div class="hero-chips">
+      <span class="chip">🌡️ GHG Reduction vs Sink Enhancement</span>
+      <span class="chip">📊 Carbon & Energy Intensity</span>
+      <span class="chip">⚖️ Carbon Neutrality</span>
+      <span class="chip">🏭 Carbon Capture & Storage</span>
+      <span class="chip">🇮🇳 NAPCC & INDCs</span>
+      <span class="chip">⚖️ Climate Justice</span>
+      <span class="chip">🌿 ISO 14001 EMS</span>
+      <span class="chip">♻️ Green Chemistry</span>
+      <span class="chip">⚙️ Green Engineering</span>
+      <span class="chip">🌱 Sustainable Development</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<section class="fade-in">
+  <div class="toc">
+    <div class="toc-title">📋 Table of Contents</div>
+    <ol>
+      <li><a href="#ghg">Mitigation of Climate Change — GHG Reduction vs Sink Enhancement</a></li>
+      <li><a href="#intensity">Carbon Intensity, Energy Intensity & Carbon Neutrality</a></li>
+      <li><a href="#ccs">Carbon Capture and Storage (CCS)</a></li>
+      <li><a href="#napcc">National Climate Action Plan (NAPCC) & INDCs</a></li>
+      <li><a href="#justice">Climate Justice</a></li>
+      <li><a href="#iso">Environmental Management System — ISO 14001</a></li>
+      <li><a href="#sustainable">Sustainable Development</a></li>
+      <li><a href="#green-chem">Green Chemistry — 12 Principles</a></li>
+      <li><a href="#green-eng">Green Engineering — 12 Principles</a></li>
+    </ol>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SECTION 1: GHG MITIGATION -->
+<section id="ghg" class="fade-in">
+  <div class="section-label">Unit 1 — Climate Change Mitigation</div>
+  <h2>GHG Reduction vs. Sink Enhancement</h2>
+
+  <p>Climate change mitigation refers to actions taken to <strong>limit the magnitude or rate of long-term climate change</strong>. There are two fundamental strategies to reduce the concentration of greenhouse gases (GHGs) in the atmosphere — and a robust climate policy requires both.</p>
+
+  <div class="definition">
+    <div class="def-term">Greenhouse Gases (GHGs)</div>
+    <p>Gases that trap heat in the Earth's atmosphere. Major GHGs include CO₂ (carbon dioxide), CH₄ (methane), N₂O (nitrous oxide), and fluorinated gases. The largest source of CO₂ is combustion of fossil fuels in energy conversion systems — approximately 64% of total emissions. The enhanced greenhouse effect due to anthropogenic GHG emissions is the primary driver of global warming.</p>
+  </div>
+
+  <div class="two-path">
+    <div class="path-box path-red">
+      <h4>🔻 Strategy 1: GHG Reduction (Source Control)</h4>
+      <p style="font-size:0.85rem; color:#555; margin-bottom:0.7rem;">Reducing the amount of GHGs emitted into the atmosphere from human activities.</p>
+      <ul>
+        <li>Shifting from fossil fuels to renewable energy (solar, wind, hydro)</li>
+        <li>Improving energy efficiency in industry, transport, buildings</li>
+        <li>Electrification of transport and heating systems</li>
+        <li>Reducing methane from agriculture and waste</li>
+        <li>Phase-out of fluorinated gases (HFCs, PFCs, SF₆)</li>
+        <li>Carbon taxes and cap-and-trade emission markets</li>
+        <li>Sustainable land use — reducing deforestation</li>
+      </ul>
+    </div>
+    <div class="path-box path-blue">
+      <h4>🔼 Strategy 2: Sink Enhancement (Carbon Sequestration)</h4>
+      <p style="font-size:0.85rem; color:#444; margin-bottom:0.7rem;">Enhancing natural or technological systems that absorb and store CO₂ from the atmosphere.</p>
+      <ul>
+        <li>Afforestation and reforestation (forests as carbon sinks)</li>
+        <li>Restoration of wetlands, mangroves, peatlands</li>
+        <li>Soil carbon sequestration through better agriculture</li>
+        <li>Ocean iron fertilization (controversial — under study)</li>
+        <li>Blue carbon (seagrasses, salt marshes, mangroves)</li>
+        <li>Bioenergy with Carbon Capture and Storage (BECCS)</li>
+        <li>Enhanced weathering of silicate rocks</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Key Greenhouse Gases & Their Sources</h3>
+  <table>
+    <thead><tr><th>GHG</th><th>Chemical Formula</th><th>Major Sources</th><th>GWP (100 yr)</th></tr></thead>
+    <tbody>
+      <tr><td>Carbon Dioxide</td><td>CO₂</td><td>Fossil fuel combustion, deforestation</td><td>1 (baseline)</td></tr>
+      <tr><td>Methane</td><td>CH₄</td><td>Agriculture (livestock), landfills, natural gas</td><td>~28</td></tr>
+      <tr><td>Nitrous Oxide</td><td>N₂O</td><td>Agricultural soils, livestock, fertilizers</td><td>~273</td></tr>
+      <tr><td>HFCs</td><td>Various</td><td>Refrigeration, air conditioning</td><td>Up to 12,400</td></tr>
+      <tr><td>SF₆</td><td>SF₆</td><td>Electrical equipment</td><td>~23,500</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight">
+    <p><strong>GWP (Global Warming Potential):</strong> A measure of how much heat a greenhouse gas traps in the atmosphere over a specific time period, relative to CO₂. A GWP of 28 for methane means 1 kg of CH₄ traps 28 times more heat than 1 kg of CO₂ over 100 years.</p>
+  </div>
+
+  <h3>Carbon Sinks: Types and Role</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🌲</div>
+      <h4>Terrestrial Sinks</h4>
+      <p>Forests, grasslands, and agricultural lands absorb CO₂ through photosynthesis. Forests alone absorb ~2.6 billion tonnes of CO₂ per year globally. Deforestation destroys this critical capacity.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌊</div>
+      <h4>Ocean Sinks</h4>
+      <p>Oceans absorb approximately 25–30% of annual CO₂ emissions via dissolution and biological uptake (phytoplankton). Increased CO₂ leads to ocean acidification — a major ecological concern.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏔️</div>
+      <h4>Geological Sinks</h4>
+      <p>CO₂ stored in rock formations, deep saline aquifers, or depleted oil/gas reservoirs — the basis for Carbon Capture and Storage (CCS) technology. Can store CO₂ for millions of years.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌿</div>
+      <h4>Soil Carbon</h4>
+      <p>Soil stores approximately 2–3 times more carbon than the atmosphere. Regenerative agriculture practices (no-till, cover crops, compost) can significantly enhance soil carbon sequestration.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SECTION 2: CARBON INTENSITY, ENERGY INTENSITY, CARBON NEUTRALITY -->
+<div class="bg-mist">
+<section id="intensity" class="fade-in" style="background:transparent;">
+  <div class="section-label">Unit 1.2 — Key Metrics</div>
+  <h2>Carbon Intensity, Energy Intensity & Carbon Neutrality</h2>
+
+  <h3>1. Carbon Intensity (CI)</h3>
+  <p>Carbon Intensity measures <strong>how much CO₂ is emitted per unit of economic output or energy produced</strong>. It is a crucial indicator of decarbonization progress — showing not just <em>how much</em> is emitted, but <em>how efficiently</em> output is produced.</p>
+
+  <div class="formula">
+    <span>Carbon Intensity</span> = CO₂ Emissions (fossil fuels + industry) / Total Primary Energy Consumed
+  </div>
+
+  <p>At the national level, CI is often expressed as <strong>kg CO₂ per unit of GDP</strong> (e.g., tonnes CO₂ per million USD of GDP). India's NDC target includes a 47% reduction in the <em>emissions intensity of GDP</em> from 2005 levels by 2035.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">📉</div>
+      <h4>CI vs Carbon Footprint</h4>
+      <p><strong>Carbon Footprint</strong> = Total GHGs emitted (absolute amount). <strong>Carbon Intensity</strong> = Emissions per unit of output. A large company can have a big footprint but low CI if it uses energy very efficiently.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h4>Reducing Carbon Intensity</h4>
+      <p>Key approaches: switching to renewable energy (near-zero CI vs coal at ~820 gCO₂/kWh), upgrading equipment for efficiency, adopting cleaner fuels, and implementing industrial process improvements.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h4>Sectoral Carbon Intensity</h4>
+      <p>Different sectors have vastly different CI. Coal power ~820 gCO₂/kWh; natural gas ~490; solar ~41; wind ~11. High-CI sectors (cement, steel, aviation) are the hardest to decarbonize.</p>
+    </div>
+  </div>
+
+  <h3>2. Energy Intensity (EI)</h3>
+  <p>Energy Intensity measures <strong>how much energy is used per unit of GDP or economic output</strong>. A lower EI means the economy is more energy-efficient — producing more output with less energy.</p>
+
+  <div class="formula">
+    <span>Energy Intensity</span> = Total Primary Energy Supply (TPES) / GDP
+  </div>
+
+  <div class="highlight">
+    <p><strong>Relationship between CI and EI:</strong> Carbon Intensity = Energy Intensity × Carbon Content of Energy. This means two countries with the same EI can have very different CIs depending on whether they use coal (high carbon) or renewables (low carbon) for energy. Reducing either EI or the carbon content of the energy mix will reduce overall CI.</p>
+  </div>
+
+  <div class="two-path">
+    <div class="path-box path-blue">
+      <h4>📊 Factors Reducing EI</h4>
+      <ul>
+        <li>Technological improvements in industrial processes</li>
+        <li>Better insulation in buildings (reduced heating/cooling)</li>
+        <li>Fuel-efficient vehicles and public transport</li>
+        <li>Energy-efficient appliances and lighting (LEDs)</li>
+        <li>Smart grids and demand-side management</li>
+        <li>Industrial symbiosis (waste heat reuse)</li>
+      </ul>
+    </div>
+    <div class="path-box path-red">
+      <h4>⚠️ Factors Increasing EI</h4>
+      <ul>
+        <li>Aging industrial infrastructure</li>
+        <li>Growth of energy-intensive industries</li>
+        <li>Urbanization without energy planning</li>
+        <li>Subsidies on fossil fuels discouraging efficiency</li>
+        <li>Shift towards more energy-intensive lifestyles</li>
+        <li>Rebound effect — efficiency gains offset by increased usage</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>3. Carbon Neutrality</h3>
+
+  <div class="definition">
+    <div class="def-term">Carbon Neutrality</div>
+    <p>Achieving a balance between emitting carbon and absorbing carbon from the atmosphere — resulting in a net-zero carbon footprint. It means the amount of CO₂ emitted equals the amount removed, whether through natural sinks or technological means. Carbon neutrality can be applied at the level of individuals, organizations, cities, or nations.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h4>Carbon Neutral vs Net Zero</h4>
+      <p><strong>Carbon neutrality</strong> focuses on CO₂ only, often using offsets. <strong>Net Zero GHG</strong> covers all greenhouse gases and generally requires deeper, actual reductions with minimal reliance on offsets. At global scale, the two terms converge.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h4>Carbon Offsetting</h4>
+      <p>Compensating for emissions by funding an equivalent CO₂ saving elsewhere — e.g., funding a reforestation project or a renewable energy installation. Widely used but controversial if used to avoid real reductions.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <h4>Global Target: Net Zero by 2050</h4>
+      <p>The IPCC states that to limit warming to 1.5°C, global CO₂ emissions must reach net zero around 2050. Countries are submitting NDCs to demonstrate their pathway to achieving this.</p>
+    </div>
+  </div>
+
+  <div class="diagram-box fade-in">
+    <div class="diagram-title">⚖️ Pathway to Carbon Neutrality</div>
+    <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:1rem; max-width:700px; margin:0 auto;">
+      <div style="background:#fde8e8; border:2px solid #e76f51; border-radius:10px; padding:1rem; min-width:130px; text-align:center;">
+        <div style="font-size:1.5rem;">🏭</div>
+        <div style="font-size:0.8rem; font-weight:600; color:#c45;">Scope 1 Emissions</div>
+        <div style="font-size:0.72rem; color:#666;">Direct (own operations)</div>
+      </div>
+      <div style="font-size:1.2rem; color:#999;">+</div>
+      <div style="background:#fde8e8; border:2px solid #e76f51; border-radius:10px; padding:1rem; min-width:130px; text-align:center;">
+        <div style="font-size:1.5rem;">⚡</div>
+        <div style="font-size:0.8rem; font-weight:600; color:#c45;">Scope 2 Emissions</div>
+        <div style="font-size:0.72rem; color:#666;">Indirect (purchased energy)</div>
+      </div>
+      <div style="font-size:1.2rem; color:#999;">+</div>
+      <div style="background:#fde8e8; border:2px solid #e76f51; border-radius:10px; padding:1rem; min-width:130px; text-align:center;">
+        <div style="font-size:1.5rem;">🔗</div>
+        <div style="font-size:0.8rem; font-weight:600; color:#c45;">Scope 3 Emissions</div>
+        <div style="font-size:0.72rem; color:#666;">Value chain</div>
+      </div>
+      <div style="font-size:1.5rem; color:var(--azure);">⟶</div>
+      <div style="background:#e3f2fd; border:2px solid var(--teal); border-radius:10px; padding:1rem; min-width:130px; text-align:center;">
+        <div style="font-size:1.5rem;">🌿</div>
+        <div style="font-size:0.8rem; font-weight:600; color:var(--sky);">Reduce + Offset</div>
+        <div style="font-size:0.72rem; color:#666;">Renewables + Carbon sinks + CCS</div>
+      </div>
+      <div style="font-size:1.5rem; color:var(--azure);">⟶</div>
+      <div style="background:#e8f8f0; border:2px solid var(--leaf); border-radius:10px; padding:1rem; min-width:130px; text-align:center;">
+        <div style="font-size:1.5rem;">⚖️</div>
+        <div style="font-size:0.8rem; font-weight:700; color:var(--green);">CARBON NEUTRAL</div>
+        <div style="font-size:0.72rem; color:#666;">Net emissions = 0</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION 3: CCS -->
+<section id="ccs" class="fade-in">
+  <div class="section-label">Unit 1.3 — Technology</div>
+  <h2>Carbon Capture and Storage (CCS)</h2>
+
+  <p>CCS is a collection of technologies designed to capture CO₂ emissions at their source — primarily large stationary emitters like power plants and industrial facilities — and store them permanently underground to prevent their release into the atmosphere.</p>
+
+  <div class="key-fact">📌 CCS projects globally are currently storing over 50 million tonnes of CO₂ per year — roughly equivalent to the annual emissions of a country like Greece or Peru (MIT Climate Portal).</div>
+
+  <div class="diagram-box fade-in">
+    <div class="diagram-title">🏭 The CCS Process: Three Major Steps</div>
+    <div style="display:flex; align-items:stretch; gap:0; flex-wrap:wrap; max-width:700px; margin:0 auto;">
+      <div class="ccs-step" style="border-radius:12px 0 0 12px; flex:1; min-width:140px;">
+        <div class="step-icon">🔬</div>
+        <h4>Step 1: Capture</h4>
+        <p>CO₂ is separated from flue gas or other emission streams at the source before it enters the atmosphere.</p>
+      </div>
+      <div class="ccs-arrow">→</div>
+      <div class="ccs-step" style="flex:1; min-width:140px;">
+        <div class="step-icon">🚛</div>
+        <h4>Step 2: Transport</h4>
+        <p>Captured CO₂ is compressed into a dense fluid and transported via pipelines or ships to a storage site.</p>
+      </div>
+      <div class="ccs-arrow">→</div>
+      <div class="ccs-step" style="border-radius:0 12px 12px 0; flex:1; min-width:140px;">
+        <div class="step-icon">🪨</div>
+        <h4>Step 3: Storage</h4>
+        <p>CO₂ is injected deep underground into geological formations — saline aquifers, depleted oil/gas fields.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Methods of Carbon Capture</h3>
+  <table>
+    <thead><tr><th>Method</th><th>Process</th><th>Best Used For</th><th>Maturity</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Post-Combustion Capture</strong></td><td>CO₂ separated from exhaust gases after burning fuel (using liquid solvents like MEA/amine systems)</td><td>Existing coal/gas power plants</td><td>Commercially available</td></tr>
+      <tr><td><strong>Pre-Combustion Capture</strong></td><td>Fuel converted to H₂ + CO₂ before combustion; CO₂ separated, H₂ used as clean fuel</td><td>Industrial processes, IGCC plants</td><td>Commercially available (industry)</td></tr>
+      <tr><td><strong>Oxy-Fuel Combustion</strong></td><td>Fuel burned in pure O₂ instead of air, producing concentrated CO₂ + H₂O stream (easy separation)</td><td>Power plants (newer design)</td><td>Demonstration stage</td></tr>
+      <tr><td><strong>Direct Air Capture (DAC)</strong></td><td>CO₂ extracted directly from ambient air using chemical sorbents or liquid solutions</td><td>Removal of historical emissions</td><td>Early commercial (expensive)</td></tr>
+      <tr><td><strong>BECCS</strong></td><td>Bioenergy production coupled with CCS — plants absorb CO₂, bioenergy released, CO₂ stored = net negative emissions</td><td>Power/biofuel production</td><td>Pilot stage</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Carbon Storage Options</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🌊</div>
+      <h4>Deep Saline Aquifers</h4>
+      <p>Most promising storage option. Saline water-bearing rock formations deep underground can store enormous volumes of CO₂. The CO₂ dissolves into brine and can mineralize over time for permanent storage.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⛽</div>
+      <h4>Depleted Oil & Gas Fields</h4>
+      <p>Proven geological traps that have held hydrocarbons for millions of years. Enhanced Oil Recovery (EOR) uses CO₂ injection to extract more oil while sequestering the CO₂ — providing economic incentive for CCS.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🪨</div>
+      <h4>Basalt Formations</h4>
+      <p>CO₂ reacts with basalt rock to form carbonate minerals (mineralization), making storage essentially permanent. The CarbFix project in Iceland demonstrated this in just 2 years.</p>
+    </div>
+  </div>
+
+  <div class="highlight-warn">
+    <p><strong>⚠️ Challenges of CCS:</strong> High capital and operational costs, energy penalty (CCS can use 15–25% of a plant's output), limited storage site availability, monitoring and leakage risks, and public acceptance. Research aims to reduce costs substantially via next-generation solvents and solid sorbents.</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SECTION 4: NAPCC & INDCS -->
+<div class="bg-ocean">
+<section id="napcc" class="fade-in" style="background:transparent; max-width:1020px; margin:0 auto; padding:4rem 1.5rem;">
+  <div class="section-label">Unit 1.4 — Policy</div>
+  <h2>National Climate Action Plan (NAPCC) & INDCs</h2>
+
+  <h3>National Action Plan on Climate Change (NAPCC)</h3>
+  <p>India's NAPCC was launched on <strong>30th June 2008</strong> by the Prime Minister's Council on Climate Change (PMCCC). It is one of the most comprehensive climate policies implemented by a developing country — addressing both climate mitigation and adaptation while maintaining a focus on economic growth and development.</p>
+
+  <div class="key-fact" style="background:var(--gold);">🏛️ NAPCC was India's proactive climate response following the 2009 Copenhagen COP and international scrutiny. It sought to reduce emissions while supporting development — reflecting India's principle of "Common But Differentiated Responsibilities (CBDR)."</div>
+
+  <h4 style="color:var(--ice); margin-top:1.5rem;">The 9 National Missions under NAPCC</h4>
+
+  <div class="missions-grid">
+    <div class="mission-card m1">
+      <h4>☀️ 1. National Solar Mission (NSM)</h4>
+      <p>Promote solar energy as affordable alternative to fossil fuels. Supports R&D, manufacturing, and international cooperation in solar technology.</p>
+    </div>
+    <div class="mission-card m2">
+      <h4>⚡ 2. Enhanced Energy Efficiency</h4>
+      <p>Mandate energy consumption decreases in large energy-consuming industries. Introduces tradable energy-saving certificates (PAT scheme).</p>
+    </div>
+    <div class="mission-card m3">
+      <h4>🏙️ 3. Sustainable Habitat</h4>
+      <p>Promote energy efficiency in urban planning. Extend Energy Conservation Building Code (ECBC) and improve fuel economy standards for vehicles.</p>
+    </div>
+    <div class="mission-card m4">
+      <h4>💧 4. National Water Mission</h4>
+      <p>Goal: 20% improvement in water use efficiency through pricing and other measures to address water scarcity from climate change.</p>
+    </div>
+    <div class="mission-card m5">
+      <h4>🏔️ 5. Himalayan Ecosystem</h4>
+      <p>Prevent melting of Himalayan glaciers and protect biodiversity in the Himalayan region. Address glacier retreat and water security.</p>
+    </div>
+    <div class="mission-card m6">
+      <h4>🌳 6. Green India Mission</h4>
+      <p>Afforestation of 6 million hectares of degraded forest lands. Expand forest cover from 23% to 33% of India's territory.</p>
+    </div>
+    <div class="mission-card m7">
+      <h4>🌾 7. Sustainable Agriculture</h4>
+      <p>Support climate adaptation in agriculture through development of climate-resilient crops, weather insurance, and improved practices.</p>
+    </div>
+    <div class="mission-card m8">
+      <h4>🔬 8. Strategic Knowledge</h4>
+      <p>Build a network of experts and knowledge systems for climate change. Establish a National Institute for Climate Change Studies.</p>
+    </div>
+    <div class="mission-card m9">
+      <h4>🔋 9. New & Renewable Energy</h4>
+      <p>Scale up wind, small hydro, biomass, and other renewable energy sources. Reduce dependence on fossil fuels through diversified clean energy portfolio.</p>
+    </div>
+  </div>
+
+  <h3>Intended Nationally Determined Contributions (INDCs / NDCs)</h3>
+  <p>INDCs (later called NDCs after Paris Agreement ratification) are <strong>publicly declared, self-determined climate commitments</strong> by countries under the UNFCCC framework. India submitted its INDC in October 2015 ahead of COP21 in Paris.</p>
+
+  <table style="color:var(--ink);">
+    <thead><tr><th>Feature</th><th>INDC (Pre-Paris)</th><th>NDC (Post-Paris)</th></tr></thead>
+    <tbody>
+      <tr><td>Nature</td><td>Intended — not yet ratified</td><td>Nationally Determined — submitted after Paris Agreement ratification</td></tr>
+      <tr><td>Legal Status</td><td>Voluntary pledge</td><td>Binding obligation to submit and update (process, not target)</td></tr>
+      <tr><td>Review Cycle</td><td>One-time submission (2015)</td><td>Updated every 5 years (progressive ambition)</td></tr>
+      <tr><td>Scope</td><td>2020–2030 actions</td><td>Evolving (2031–2035 targets approved by India in 2026)</td></tr>
+    </tbody>
+  </table>
+
+  <h4 style="color:var(--ice);">India's Key NDC Targets (Updated 2031–2035)</h4>
+  <ul class="styled-list" style="color:var(--ice);">
+    <li style="border-color:rgba(255,255,255,0.15);">🎯 <strong>60% of installed electricity capacity from non-fossil sources by 2035</strong> (India had already achieved ~52% by 2025)</li>
+    <li style="border-color:rgba(255,255,255,0.15);">📉 <strong>47% reduction in emissions intensity of GDP</strong> from 2005 levels by 2035</li>
+    <li style="border-color:rgba(255,255,255,0.15);">🌲 Create additional carbon sink of 2.5–3 billion tonnes of CO₂ equivalent through additional forest and tree cover</li>
+    <li style="border-color:rgba(255,255,255,0.15);">🔋 Continue to build renewable capacity including solar, wind, hydro, biomass, and nuclear</li>
+    <li style="border-color:rgba(255,255,255,0.15);">🌱 Operationalize through NAPCC's 9 national missions and State Action Plans on Climate Change (SAPCC)</li>
+    <li style="border-color:rgba(255,255,255,0.15);">🏙️ Implement LiFE — Lifestyle for Environment — as a mass movement for sustainable living</li>
+  </ul>
+</section>
+</div>
+
+<!-- CLIMATE JUSTICE -->
+<section id="justice" class="fade-in">
+  <div class="section-label">Unit 1.5 — Ethics & Policy</div>
+  <h2>Climate Justice</h2>
+
+  <p>Climate justice is a concept that addresses the <strong>ethical, social, and political dimensions of climate change</strong>. It recognizes that climate change is not merely an environmental issue — it is a justice issue, because its causes and consequences are deeply unequal across nations, communities, and generations.</p>
+
+  <div class="justice-box">
+    <h3>⚖️ Core Principles of Climate Justice</h3>
+    <ul>
+      <li>Historically, developed nations have emitted the most GHGs — yet developing nations (with lowest emissions) suffer the worst climate impacts (floods, droughts, sea-level rise)</li>
+      <li><strong>Common But Differentiated Responsibilities (CBDR):</strong> All nations share responsibility for climate action, but their share is proportional to their historical contributions and capabilities</li>
+      <li>Climate action must not deepen poverty — it must align with the right to development for poorer nations</li>
+      <li>Intergenerational justice: current generations must not compromise the ability of future generations to meet their needs (Brundtland definition)</li>
+      <li>Indigenous peoples and marginalized communities are disproportionately affected and must be included in climate governance</li>
+      <li>Loss and Damage: wealthy nations must provide finance to help vulnerable nations cope with unavoidable climate impacts</li>
+    </ul>
+    <p style="margin-top:1rem;">India's NDC explicitly reflects the <strong>principle of climate justice</strong> — balancing energy access, industrial growth, and mitigation. The PM's vision of "Lifestyle for Environment (LiFE)" and safeguarding the weak and vulnerable from negative climate effects advances climate justice at the global level.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <h4>Climate Finance</h4>
+      <p>Developed countries pledged $100 billion/year by 2020 (unmet) to help developing nations adapt and mitigate. The New Collective Quantified Goal (NCQG) aims to scale this up from 2025 onwards.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <h4>Technology Transfer</h4>
+      <p>A key climate justice demand: developing nations need access to clean energy technologies (solar panels, EVs, efficient appliances) at affordable prices, not blocked by patents or trade barriers.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <h4>Just Transition</h4>
+      <p>Moving away from fossil fuels must be "just" — coal mining communities and fossil fuel workers need retraining, alternative livelihoods, and social safety nets during the energy transition.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SECTION 5: ISO 14001 -->
+<div class="bg-mist">
+<section id="iso" class="fade-in" style="background:transparent;">
+  <div class="section-label">Unit 2 — Environmental Management System</div>
+  <h2>ISO 14001 — Environmental Management System (EMS)</h2>
+
+  <div class="definition">
+    <div class="def-term">ISO 14001</div>
+    <p>An internationally recognized standard for <strong>Environmental Management Systems (EMS)</strong>, published by the International Organization for Standardization (ISO). First published in 1996, revised in 2004 and 2015 (current version: ISO 14001:2015). It specifies requirements for establishing, implementing, maintaining, and continually improving an EMS. As of the ISO Survey 2024, there are <strong>over 670,000 certifications worldwide</strong>. A new revision (ISO 14001:2026) is expected.</p>
+  </div>
+
+  <h3>What is an Environmental Management System (EMS)?</h3>
+  <p>An EMS is a structured framework for making policy and process changes that help an organization improve its environmental performance. It provides a systematic approach for managing an organization's interactions with the environment — covering energy use, waste generation, emissions, water consumption, and legal compliance.</p>
+
+  <div class="highlight-green">
+    <p><strong>Key Principle:</strong> ISO 14001 does not specify absolute environmental performance requirements — instead, it provides a <em>framework</em> for continuous improvement. Each organization sets its own environmental objectives and targets appropriate to its context, and then works to achieve them systematically.</p>
+  </div>
+
+  <h3>The PDCA Cycle — Core of ISO 14001</h3>
+  <p>ISO 14001 is built on the <strong>Plan–Do–Check–Act (PDCA)</strong> methodology — a cyclical model for continuous improvement used across all ISO management system standards.</p>
+
+  <div style="display:flex; justify-content:center; margin:1.5rem 0;">
+    <div>
+      <div class="pdca">
+        <div class="pdca-cell pdca-p">
+          <div class="p-letter">P</div>
+          <h4>PLAN</h4>
+          <p>Identify environmental aspects, legal requirements, set objectives & environmental targets</p>
+        </div>
+        <div class="pdca-cell pdca-d">
+          <div class="p-letter">D</div>
+          <h4>DO</h4>
+          <p>Implement programs, provide training, establish operational controls and emergency procedures</p>
+        </div>
+        <div class="pdca-cell pdca-c">
+          <div class="p-letter">C</div>
+          <h4>CHECK</h4>
+          <p>Monitor performance, measure against objectives, conduct internal audits, evaluate compliance</p>
+        </div>
+        <div class="pdca-cell pdca-a">
+          <div class="p-letter">A</div>
+          <h4>ACT</h4>
+          <p>Management review, take corrective actions, implement improvements — restart cycle</p>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.8rem; color:#666; margin-top:0.5rem;">The PDCA cycle drives continual improvement in environmental performance</p>
+    </div>
+  </div>
+
+  <h3>Key Clauses of ISO 14001:2015</h3>
+  <div class="iso-clauses">
+    <div class="iso-clause">
+      <span class="clause-num">Clause 4</span>
+      <div><h4>Context of the Organization</h4><p>Understand the organization's internal and external issues, interested parties (stakeholders), and determine the scope of the EMS. Identify environmental conditions that may affect or be affected by the organization.</p></div>
+    </div>
+    <div class="iso-clause">
+      <span class="clause-num">Clause 5</span>
+      <div><h4>Leadership & Commitment</h4><p>Top management must demonstrate leadership by establishing an environmental policy, assigning roles and responsibilities, and ensuring the EMS achieves its intended outcomes. A key change from the 2004 version — leadership accountability is now explicit.</p></div>
+    </div>
+    <div class="iso-clause">
+      <span class="clause-num">Clause 6</span>
+      <div><h4>Planning</h4><p>Identify significant environmental aspects, evaluate compliance obligations, plan actions to address risks and opportunities. Set measurable environmental objectives with plans to achieve them — the foundation of a risk-based thinking approach.</p></div>
+    </div>
+    <div class="iso-clause">
+      <span class="clause-num">Clause 7</span>
+      <div><h4>Support</h4><p>Provide resources, ensure competence of personnel, build awareness, establish communication channels (internal and external), and maintain documented information (replacing the old "records and documents" concept).</p></div>
+    </div>
+    <div class="iso-clause">
+      <span class="clause-num">Clause 8</span>
+      <div><h4>Operation</h4><p>Establish operational controls for significant environmental aspects. Include emergency preparedness and response procedures. Also covers lifecycle perspective — now required to consider environmental impacts throughout the product/service lifecycle.</p></div>
+    </div>
+    <div class="iso-clause">
+      <span class="clause-num">Clause 9</span>
+      <div><h4>Performance Evaluation</h4><p>Monitor, measure, analyze, and evaluate environmental performance. Conduct internal audits at planned intervals. Management review of EMS to ensure continued suitability, adequacy, and effectiveness.</p></div>
+    </div>
+    <div class="iso-clause">
+      <span class="clause-num">Clause 10</span>
+      <div><h4>Improvement</h4><p>Continual enhancement of EMS through identification and mitigation of nonconformities, implementation of corrective actions, and learning from experience. The ultimate aim: better environmental performance over time.</p></div>
+    </div>
+  </div>
+
+  <h3>Benefits of ISO 14001 Certification</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">⚖️</div>
+      <h4>Legal Compliance</h4>
+      <p>Helps understand and meet all applicable environmental laws and regulations, avoiding fines, penalties, and legal liabilities.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <h4>Cost Savings</h4>
+      <p>Efficient resource usage, waste reduction, and energy conservation in processes often result in significant cost reductions — offsetting implementation costs.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <h4>Market Advantage</h4>
+      <p>Procurement specifications often require ISO 14001 certification. Opens new markets, improves reputation, and fosters loyalty among environmentally conscious customers and investors.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h4>Risk Management</h4>
+      <p>Provides tools to identify, assess, and manage environmental risks — protecting the organization from unexpected disruptions and environmental liabilities.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">👥</div>
+      <h4>Employee Awareness</h4>
+      <p>Greater employee awareness about the environment and the environmental impact of their individual jobs — building a culture of environmental responsibility.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔗</div>
+      <h4>Integration</h4>
+      <p>ISO 14001 follows the High Level Structure (HLS) — can be easily integrated with ISO 9001 (Quality) and ISO 45001 (Occupational Health & Safety) into an Integrated Management System (IMS).</p>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr><th>Feature</th><th>ISO 14001</th><th>EMAS (EU Eco-Management and Audit Scheme)</th></tr></thead>
+    <tbody>
+      <tr><td>Applicability</td><td>Global (any organization)</td><td>EU organizations only</td></tr>
+      <tr><td>Requirements</td><td>Flexible framework</td><td>More prescriptive</td></tr>
+      <tr><td>Public Reporting</td><td>Not required</td><td>Must publish an environmental statement</td></tr>
+      <tr><td>Validation</td><td>Optional third-party certification</td><td>Mandatory third-party validation</td></tr>
+      <tr><td>Focus</td><td>EMS framework itself</td><td>Actual environmental performance improvement</td></tr>
+    </tbody>
+  </table>
+</section>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION 6: SUSTAINABLE DEVELOPMENT -->
+<section id="sustainable" class="fade-in">
+  <div class="section-label">Unit 3 — Sustainable Development</div>
+  <h2>Sustainable Development</h2>
+
+  <div class="definition">
+    <div class="def-term">Sustainable Development</div>
+    <p>"Development that meets the needs of the present without compromising the ability of future generations to meet their own needs." — Brundtland Commission (Our Common Future, 1987). It rests on three pillars that must be balanced simultaneously: environmental protection, economic growth, and social equity.</p>
+  </div>
+
+  <div class="sust-triangle">
+    <div class="sust-box sust-env">
+      <div class="s-icon">🌍</div>
+      <h4>Environmental Sustainability</h4>
+      <p>Protecting ecosystems, biodiversity, and natural resources. Maintaining ecological processes and climate stability for future generations.</p>
+    </div>
+    <div class="sust-box sust-eco">
+      <div class="s-icon">💹</div>
+      <h4>Economic Sustainability</h4>
+      <p>Ensuring long-term economic growth without depleting natural capital. Green economy, circular economy, and resource efficiency.</p>
+    </div>
+    <div class="sust-box sust-soc">
+      <div class="s-icon">🤝</div>
+      <h4>Social Sustainability</h4>
+      <p>Equitable distribution of resources, eradication of poverty, social justice, gender equality, and access to education and healthcare.</p>
+    </div>
+  </div>
+
+  <h3>UN Sustainable Development Goals (SDGs)</h3>
+  <p>The 17 SDGs (adopted 2015, Agenda 2030) provide a universal blueprint. SDG 13 (Climate Action), SDG 7 (Affordable & Clean Energy), SDG 12 (Responsible Consumption), and SDG 11 (Sustainable Cities) are most directly linked to climate mitigation and green chemistry/engineering.</p>
+
+  <div class="highlight">
+    <p><strong>Chemistry's Role in Sustainability:</strong> Chemistry-based industries (pharmaceuticals, agrochemicals, plastics, materials) have traditionally been major sources of pollution and resource depletion. Two transformative approaches — <strong>Green Chemistry</strong> and <strong>Green Engineering</strong> — provide the scientific and technological framework for making these industries sustainable.</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SECTION 7: GREEN CHEMISTRY -->
+<div class="bg-green">
+<section id="green-chem" class="fade-in" style="background:transparent;">
+  <div class="section-label">Unit 3.1 — Green Chemistry</div>
+  <h2>Green Chemistry — The 12 Principles</h2>
+
+  <div class="definition" style="background:var(--green);">
+    <div class="def-term">Green Chemistry</div>
+    <p>Green chemistry, also called sustainable chemistry, is the design of chemical products and processes that reduce or eliminate the use and generation of hazardous substances. The 12 Principles of Green Chemistry were formulated by Paul Anastas and John Warner (1998, Oxford University Press). These principles guide chemists toward best practices in reducing hazards and impacts <em>at the design and process level</em> — prevention rather than remediation.</p>
+  </div>
+
+  <div class="gc-grid">
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 01</div>
+      <h4>Prevention</h4>
+      <p>It is better to prevent waste than to treat or clean up waste after it has been formed. Eliminating waste at source is always preferred to disposal or remediation.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 02</div>
+      <h4>Atom Economy</h4>
+      <p>Synthetic methods should be designed to maximize the incorporation of all materials used in the process into the final product. Developed by Barry Trost — asks "what atoms are wasted?"</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 03</div>
+      <h4>Less Hazardous Synthesis</h4>
+      <p>Wherever practicable, synthetic methodologies should be designed to use and generate substances that possess little or no toxicity to human health and the environment.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 04</div>
+      <h4>Safer Chemical Design</h4>
+      <p>Chemical products should be designed to preserve efficacy of function while reducing toxicity. Design for function, not just structure — minimize hazard while maintaining performance.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 05</div>
+      <h4>Safer Solvents & Auxiliaries</h4>
+      <p>Use of auxiliary substances (solvents, separation agents) should be made unnecessary wherever possible, and innocuous when used. Selection guides (e.g., GlaxoSmithKline, Pfizer) help rank solvents by health, safety, and environmental profiles.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 06</div>
+      <h4>Design for Energy Efficiency</h4>
+      <p>Energy requirements should be recognized for their environmental and economic impacts and should be minimized. Conduct syntheses at ambient temperature and pressure whenever possible.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 07</div>
+      <h4>Use of Renewable Feedstocks</h4>
+      <p>A raw material or feedstock should be renewable rather than depleting whenever technically and economically practicable. Biomass, CO₂, and agricultural waste are key renewable feedstocks.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 08</div>
+      <h4>Reduce Derivatives</h4>
+      <p>Unnecessary derivatization (blocking groups, protection/deprotection, temporary modification) should be minimized or avoided. Such steps require additional reagents and can generate waste.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 09</div>
+      <h4>Catalysis</h4>
+      <p>Catalytic reagents (selective as possible) are superior to stoichiometric reagents. Catalysts are used in small amounts and can be reused — reducing waste versus single-use stoichiometric reagents.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 10</div>
+      <h4>Design for Degradation</h4>
+      <p>Chemical products should be designed so that at the end of their function they break down into innocuous degradation products and do not persist in the environment. Biodegradability over persistence.</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 11</div>
+      <h4>Real-time Analysis for Pollution Prevention</h4>
+      <p>Analytical methodologies need to be further developed to allow for real-time, in-process monitoring and control before the formation of hazardous substances. Process Analytical Technology (PAT).</p>
+    </div>
+    <div class="gc-card">
+      <div class="gc-num">PRINCIPLE 12</div>
+      <h4>Inherently Safer Chemistry</h4>
+      <p>Substances and forms of substances used in chemical processes should be chosen to minimize the potential for chemical accidents, including releases, explosions, and fires. Inherently safe design preferred over add-on controls.</p>
+    </div>
+  </div>
+
+  <h3>Real-World Applications of Green Chemistry</h3>
+  <table>
+    <thead><tr><th>Application</th><th>Conventional Approach</th><th>Green Chemistry Solution</th></tr></thead>
+    <tbody>
+      <tr><td>Drug synthesis (Simvastatin)</td><td>Multi-step chemical synthesis with toxic solvents</td><td>Biocatalytic method (Codexis/UCLA) — dramatically reduced solvent use and waste (2012 Presidential Green Chemistry Award)</td></tr>
+      <tr><td>Sertraline (Zoloft) manufacturing</td><td>3-solvent process, low yield, large waste</td><td>Pfizer redesigned to single-step in ethanol — improved atom economy, reduced hazardous by-products</td></tr>
+      <tr><td>Microwave chemistry</td><td>Long reaction times, heating with conventional solvents</td><td>Microwave irradiation reduces reaction times from hours to minutes, often solvent-free</td></tr>
+      <tr><td>CO₂ as solvent</td><td>Organic solvents (chlorinated, toxic)</td><td>Supercritical CO₂ as green solvent — tunable properties, non-toxic, recyclable</td></tr>
+      <tr><td>Bioplastics</td><td>Petroleum-derived, persistent plastics</td><td>PLA (polylactic acid) from renewable corn starch — biodegradable</td></tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-green">
+    <p><strong>Atom Economy Formula:</strong> Atom Economy (%) = (Molecular weight of desired product / Sum of molecular weights of all reactants) × 100. A reaction with 100% atom economy incorporates every atom of the starting materials into the desired product — zero waste by definition. Example: Addition reactions are 100% atom economical; substitution reactions are not.</p>
+  </div>
+</section>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION 8: GREEN ENGINEERING -->
+<section id="green-eng" class="fade-in">
+  <div class="section-label">Unit 3.2 — Green Engineering</div>
+  <h2>Green Engineering — The 12 Principles</h2>
+
+  <p>While green chemistry focuses on molecules and chemical processes, <strong>green engineering</strong> applies sustainability thinking to the design of products, processes, and systems at the engineering and industrial scale. The 12 Principles of Green Engineering were published by Paul Anastas and Julie Zimmerman in 2003 in <em>Environmental Science & Technology</em>.</p>
+
+  <div class="definition" style="background:var(--green);">
+    <div class="def-term">Green Engineering</div>
+    <p>The design, commercialization, and use of processes and products that are technically and economically feasible, while minimizing generation of pollution at the source and risk to human health and the environment. Green engineering is complementary to green chemistry — it scales sustainable principles from bench to plant and product lifecycle.</p>
+  </div>
+
+  <h3>The 12 Principles of Green Engineering (Anastas & Zimmerman, 2003)</h3>
+
+  <ol class="ge-list">
+    <li><strong>Inherency over Circumstance:</strong> Designers need to strive to ensure that all material and energy inputs and outputs are as inherently nonhazardous as possible — choose inherently safe, non-toxic materials at the design stage rather than relying on add-on safety measures.</li>
+    <li><strong>Prevention Instead of Treatment:</strong> It is better to prevent waste than to treat or clean up waste after it has been formed. Design out waste at the source — parallels Principle 1 of green chemistry.</li>
+    <li><strong>Design for Separation:</strong> Separation and purification operations should be designed to minimize energy consumption and materials use. Innovative separation technologies (membranes, simulated moving beds) reduce energy and solvent needs dramatically.</li>
+    <li><strong>Maximize Mass, Energy, Space & Time Efficiency:</strong> Products, processes, and systems should be designed to maximize mass, energy, space, and time efficiency. Compact continuous flow reactors, process intensification, and heat integration are key strategies.</li>
+    <li><strong>Output-Pulled vs Input-Pushed:</strong> Products, processes, and systems should be "output pulled" rather than "input pushed" through the use of energy and materials. Produce what is needed when it is needed — avoiding overproduction and associated waste.</li>
+    <li><strong>Conserve Complexity:</strong> Embedded entropy and complexity must be viewed as an investment when making design choices on recycle, reuse, or beneficial disposition. Complex molecules should be reused, not degraded — preserving the energy invested in their synthesis.</li>
+    <li><strong>Durability Rather than Immortality:</strong> Targeted durability — not immortality — should be a design goal. Products should last as long as needed, but not persist indefinitely in the environment. Design for end-of-life.</li>
+    <li><strong>Meet Need, Minimize Excess:</strong> Design for unnecessary capacity or capability (e.g., "one size fits all") solutions should be considered a design flaw. Precision design — match product performance exactly to the need, avoiding over-engineering and material waste.</li>
+    <li><strong>Minimize Material Diversity:</strong> Material diversity in multi-component products should be minimized to promote disassembly and value retention. Using fewer material types makes recycling easier and reduces contamination in waste streams.</li>
+    <li><strong>Integrate Material and Energy Flows:</strong> Design of products, processes, and systems must include integration and interconnectivity with available energy and materials flows. Industrial ecology — use the waste of one process as the input of another (industrial symbiosis).</li>
+    <li><strong>Design for Commercial "Afterlife":</strong> Products, processes, and systems should be designed for performance in a commercial "afterlife." Cradle-to-cradle design — products designed for reuse, remanufacturing, and recycling at end of life, not for landfill.</li>
+    <li><strong>Renewable Rather than Depleting:</strong> Material and energy inputs should be renewable rather than depleting. Shift from fossil-based feedstocks (coal, petroleum) to renewable biomass, solar energy, wind, etc. — closing the material and energy loop.</li>
+  </ol>
+
+  <h3>Green Chemistry vs Green Engineering — Comparison</h3>
+  <div class="vs-grid">
+    <div class="vs-col vs-green">
+      <div class="vs-head">🧪 Green Chemistry</div>
+      <div class="vs-body">
+        <ul>
+          <li>Focuses on molecular-level design</li>
+          <li>Deals with chemical synthesis and reactions</li>
+          <li>Aims to reduce/eliminate hazardous reagents</li>
+          <li>Atom economy is a key metric</li>
+          <li>Bench scale — lab reactions and processes</li>
+          <li>Tools: catalysis, biocatalysis, green solvents</li>
+          <li>Minimize waste at chemical source</li>
+          <li>Developed by Anastas & Warner, 1998</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vs-col vs-blue">
+      <div class="vs-head">⚙️ Green Engineering</div>
+      <div class="vs-body">
+        <ul>
+          <li>Focuses on systems and process design</li>
+          <li>Deals with engineering of products and systems</li>
+          <li>Aims to minimize material and energy use</li>
+          <li>Life cycle assessment (LCA) is a key tool</li>
+          <li>Industrial scale — plants, products, systems</li>
+          <li>Tools: process intensification, industrial ecology</li>
+          <li>Design for end-of-life and circular economy</li>
+          <li>Developed by Anastas & Zimmerman, 2003</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3>Industrial Applications of Green Engineering</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h4>Continuous Flow Reactors</h4>
+      <p>Replace large batch reactors with smaller continuous flow systems — dramatically reducing reaction volumes, energy use, and safety risks. Better temperature control and selectivity means less waste.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h4>Industrial Symbiosis</h4>
+      <p>Networks of industries that exchange waste streams — one industry's waste becomes another's input. The Kalundborg Eco-Industrial Park (Denmark) is the classic example, where waste heat, steam, and materials are shared between companies.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">♻️</div>
+      <h4>Life Cycle Assessment (LCA)</h4>
+      <p>A systematic analysis of the environmental impact of a product throughout its entire life — from raw material extraction ('cradle') to disposal ('grave') or recovery ('cradle-to-cradle'). Essential green engineering tool.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <h4>Biorefineries</h4>
+      <p>Analogous to petroleum refineries, but using biomass as the feedstock. Convert agricultural residues, algae, or municipal waste into fuels, chemicals, and materials — closing the carbon loop.</p>
+    </div>
+  </div>
+
+  <div class="highlight-green">
+    <p><strong>Green Chemistry + Green Engineering Together:</strong> Green chemistry designs the <em>right molecule</em> with the <em>right synthesis route</em> — green engineering then scales it up efficiently and safely, designs the plant to minimize waste and energy, and ensures the product has minimal environmental impact throughout its lifecycle. Together they provide a holistic approach to chemistry-based sustainability.</p>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<div class="bg-ocean">
+<section class="fade-in" style="background:transparent; max-width:1020px; margin:0 auto; padding:4rem 1.5rem;">
+  <div class="section-label">Chapter Summary</div>
+  <h2>Key Takeaways at a Glance</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem;">
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">🌡️</div>
+      <h4 style="color:var(--teal);">GHG Mitigation</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">Two strategies: source reduction (switching to renewables, efficiency) and sink enhancement (forests, wetlands, CCS). Both needed simultaneously.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">📊</div>
+      <h4 style="color:var(--teal);">Carbon & Energy Intensity</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">CI = CO₂/energy; EI = energy/GDP. Carbon Neutrality = net zero CO₂. India's NDC targets 47% CI reduction vs 2005 levels by 2035.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">🏭</div>
+      <h4 style="color:var(--teal);">CCS Technology</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">Post/pre-combustion, oxy-fuel, DAC, BECCS. Steps: Capture → Transport → Store underground. Currently stores 50M tonnes CO₂/year globally.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">🇮🇳</div>
+      <h4 style="color:var(--teal);">NAPCC & INDCs</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">NAPCC (2008): 9 missions. INDCs → NDCs post-Paris 2015. India targets 60% non-fossil electricity by 2035, 47% CI reduction, 2.5–3 Bt additional carbon sink.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">⚖️</div>
+      <h4 style="color:var(--teal);">Climate Justice</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">CBDR: differentiated responsibilities. Developed nations must lead + finance. Just transition, intergenerational equity, technology transfer to developing nations.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">🌿</div>
+      <h4 style="color:var(--teal);">ISO 14001</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">EMS standard. PDCA cycle. 7 key clauses (4–10). 670,000+ certifications worldwide. Benefits: compliance, cost savings, market advantage, risk management.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">🧪</div>
+      <h4 style="color:var(--teal);">Green Chemistry</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">12 Principles (Anastas & Warner, 1998). Key: prevention, atom economy, safer synthesis, catalysis, design for degradation. Prevent waste at molecular level.</p>
+    </div>
+    <div class="card" style="background:rgba(255,255,255,0.05); border-color:rgba(0,180,216,0.25);">
+      <div class="card-icon">⚙️</div>
+      <h4 style="color:var(--teal);">Green Engineering</h4>
+      <p style="color:rgba(255,255,255,0.8); font-size:0.88rem;">12 Principles (Anastas & Zimmerman, 2003). Key: inherency, output-pulled, design for afterlife, renewable inputs, industrial symbiosis, LCA, minimize material diversity.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg width="24" height="24" viewBox="0 0 36 36" fill="none" style="vertical-align:middle; margin-right:8px;">
+      <circle cx="18" cy="18" r="18" fill="#1a7abf"/>
+      <path d="M18 6 C10 6 6 13 8 20 C10 27 18 30 18 30 C18 30 26 27 28 20 C30 13 26 6 18 6Z" fill="#00b4d8"/>
+      <path d="M18 30 L18 14" stroke="#0f3460" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    Scholarnest
+  </div>
+  <p>Climate Mitigation & Sustainability · Environmental Studies Notes</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
